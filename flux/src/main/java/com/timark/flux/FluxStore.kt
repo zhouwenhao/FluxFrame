@@ -1,6 +1,7 @@
 package com.timark.flux
 
 import android.app.Activity
+import android.app.Fragment
 import android.os.Handler
 import android.os.Looper
 
@@ -20,9 +21,13 @@ abstract class FluxStore<TQ, TP, TA : FluxAction<TQ, TP>>(val mAction : String) 
 
     abstract fun onPath(action : TA)
 
-    protected fun obserView(){
+    protected fun obserView(value : TP?){
+        mBAction?.mResp = value
         mViewObj?.let {
             if (it is Activity && (it.isDestroyed || it.isFinishing)){
+                return
+            }
+            if (it is Fragment && (it.isDetached)){
                 return
             }
             for (method in it::class.java.declaredMethods){

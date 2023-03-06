@@ -29,8 +29,6 @@ android {
 }
 
 dependencies {
-    api 'com.blankj:utilcodex:1.31.1'
-    api project(':flux')
-    api project(':net')
-    api project(':cache')
+
+    api project(':sundy')
 }

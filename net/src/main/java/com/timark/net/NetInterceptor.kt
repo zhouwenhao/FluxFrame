@@ -33,7 +33,11 @@ abstract class NetInterceptor : Interceptor{
 
         var oriResStr : String? = null
         if (catchException == null){
-            oriResStr = response!!.body.toString()
+            if (response!!.body != null){
+                oriResStr = response.body!!.string()
+            } else {
+                catchException = IOException("body is empty")
+            }
         }
 
         log(newRequest.method, newRequest.url.toString(), readMediaType(newRequest.body), newRequest.headers.toString(), readRequestBody(newRequest.body), oriResStr, resHttpCode, catchException, usedTime)

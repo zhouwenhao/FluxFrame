@@ -12,9 +12,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/appbase" />
+            <option value="$PROJECT_DIR$/business" />
             <option value="$PROJECT_DIR$/cache" />
             <option value="$PROJECT_DIR$/flux" />
-            <option value="$PROJECT_DIR$/image" />
             <option value="$PROJECT_DIR$/net" />
             <option value="$PROJECT_DIR$/sundy" />
           </set>

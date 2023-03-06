@@ -1,13 +1,20 @@
 package com.timark.cache
 
+import android.content.Context
 import android.os.Parcelable
 import com.tencent.mmkv.MMKV
 
 class CacheSp(fileName : String) {
 
-    private val mSp = MMKV.mmkvWithID(fileName, MMKV.MULTI_PROCESS_MODE)
+    companion object{
+        fun init(ctx : Context){
+            MMKV.initialize(ctx)
+        }
+    }
 
-    fun getKey(key: String) : String{
+    private val mSp = MMKV.mmkvWithID(getKey(fileName), MMKV.MULTI_PROCESS_MODE)
+
+    private fun getKey(key: String) : String{
         return "key_${key.hashCode()}"
     }
 
