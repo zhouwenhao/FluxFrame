@@ -11,6 +11,10 @@ abstract class HttpObser<T>(tag : String, private val viewObj : Any) : NetObser<
         return true
     }
 
+    protected fun needDealResp() : Boolean{
+        return true
+    }
+
     override fun onSubscribe(d: Disposable) {
         super.onSubscribe(d)
         if (needShowLoading()){
@@ -37,7 +41,9 @@ abstract class HttpObser<T>(tag : String, private val viewObj : Any) : NetObser<
     }
 
     override fun onFail(error: HttpResp<T>) {
-        HttpDealMgr.getDealCall()?.deal(error as HttpResp<Any>)
+        if (needDealResp()) {
+            HttpDealMgr.getDealCall()?.deal(error as HttpResp<Any>)
+        }
         if (needShowLoading()){
             Dispatcher.dispatch(LoadAction(false), viewObj)
         }
