@@ -9,7 +9,7 @@ import com.timark.sundy.flux.SundyFluxActions
 open class BAct : AppCompatActivity() {
 
     @FluxObser(action = SundyFluxActions.ACTION_LOAD)
-    private fun loadDialogState(action : LoadAction){
+    fun loadDialogState(action : LoadAction){
         Log.d("ttttttttt", "loadDialogState ${action.mResp}")
         if (action.mResp == true){
             showLoad()

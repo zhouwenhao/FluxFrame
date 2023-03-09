@@ -10,7 +10,7 @@ class Dispatcher {
             mStoreMap[args.mAction] = args
         }
 
-        fun<TQ, TP, TV : Any> dispatch(action : FluxAction<TQ, TP>, obj : TV){
+        fun<TQ, TP, TV : Any> dispatch(action : FluxAction<TQ, TP>, obj : TV?){
             mStoreMap[action.mAction]?.let {
                 (it as FluxStore<TQ, TP, FluxAction<TQ, TP>>).patch(action, obj)
             }

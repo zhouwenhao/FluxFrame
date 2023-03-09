@@ -15,7 +15,7 @@ class SplashStore : FluxStore<Any, SplashItem, FluxAction<Any, SplashItem>>(Busi
         obserView(BusiSp.getSplash())
 
         BusiHttp.getOpSplashList()
-            .subscribe(object : HttpObser<SplashItem>("${System.currentTimeMillis()}", mViewObj!!){
+            .subscribe(object : HttpObser<SplashItem>("${System.currentTimeMillis()}", mViewWeakObj?.get()){
                 override fun onSuc(value: HttpResp<SplashItem>) {
                     super.onSuc(value)
                     BusiSp.saveSplash(value.data)

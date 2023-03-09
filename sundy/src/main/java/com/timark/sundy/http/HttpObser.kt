@@ -5,7 +5,7 @@ import com.timark.net.NetObser
 import com.timark.sundy.flux.LoadAction
 import io.reactivex.disposables.Disposable
 
-abstract class HttpObser<T>(tag : String, private val viewObj : Any) : NetObser<HttpResp<T>>(tag) {
+abstract class HttpObser<T>(tag : String, private val viewObj : Any?) : NetObser<HttpResp<T>>(tag) {
 
     protected fun needShowLoading() : Boolean{
         return true
