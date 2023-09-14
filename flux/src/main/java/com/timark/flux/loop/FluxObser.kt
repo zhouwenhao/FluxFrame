@@ -1,4 +1,4 @@
-package com.timark.flux
+package com.timark.flux.loop
 
 @Target(AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.RUNTIME)

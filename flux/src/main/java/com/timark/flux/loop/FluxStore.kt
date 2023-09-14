@@ -1,13 +1,14 @@
-package com.timark.flux
+package com.timark.flux.loop
 
 import android.app.Activity
 import android.app.Fragment
 import android.os.Handler
 import android.os.Looper
+import com.timark.flux.RootStore
 import java.lang.ref.WeakReference
 import java.lang.reflect.Method
 
-abstract class FluxStore<TQ, TP, TA : FluxAction<TQ, TP>>(val mAction : String) {
+abstract class FluxStore<TQ, TP, TA : FluxAction<TQ, TP>>(action : String) : RootStore(action) {
     companion object{
         val mMainHandler = Handler(Looper.getMainLooper())
     }

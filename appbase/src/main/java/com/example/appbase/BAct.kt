@@ -2,7 +2,7 @@ package com.example.appbase
 
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.timark.flux.FluxObser
+import com.timark.flux.loop.FluxObser
 import com.timark.sundy.flux.LoadAction
 import com.timark.sundy.flux.SundyFluxActions
 

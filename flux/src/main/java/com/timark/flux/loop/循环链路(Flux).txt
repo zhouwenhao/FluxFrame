@@ -1,0 +1,1 @@
+比如  loadSplash --- showSplash

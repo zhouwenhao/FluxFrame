@@ -1,7 +1,7 @@
 package com.example.appbase
 
 import androidx.fragment.app.Fragment
-import com.timark.flux.FluxObser
+import com.timark.flux.loop.FluxObser
 import com.timark.sundy.flux.LoadAction
 import com.timark.sundy.flux.SundyFluxActions
 
